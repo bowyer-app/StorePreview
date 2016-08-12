@@ -16,6 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.bowyer.app.storepreview.preference.DataPreference;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
@@ -25,6 +26,7 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
   private static String KEY_DESCRIPTION = "key_description";
   private static String SHARE_FORMAT = "【簡単な説明文】\n%s\n【詳細な説明文】\n%s";
 
+  @Bind(R.id.scrollView) ObservableScrollView scrollView;
   @Bind(R.id.short_description) TextView shortDescription;
   @Bind(R.id.description) TextView description;
   @Bind(R.id.toolbar) Toolbar toolbar;
@@ -47,6 +49,7 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
     setContentView(R.layout.activity_preview);
     ButterKnife.bind(this);
     mPrefs = new DataPreference(this);
+    scrollView.setScrollViewCallbacks(this);
     initToolbar();
     initData();
   }

@@ -14,7 +14,8 @@
       android:elevation="5dp"
       android:minHeight="?attr/actionBarSize"
       />
-  <ScrollView
+  <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+      android:id="@+id/scrollView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_below="@id/toolbar"
@@ -51,7 +52,7 @@
           android:textColor="@color/black"
           />
     </LinearLayout>
-  </ScrollView>
+  </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
   <android.support.design.widget.FloatingActionButton
       android:id="@+id/fab"
       android:layout_width="wrap_content"
