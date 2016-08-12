@@ -11,6 +11,7 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -86,6 +87,8 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
   @OnClick(R.id.fab) void save() {
     mPrefs.saveShortText(textShort);
     mPrefs.saveSescriptionText(textDescription);
+    Toast.makeText(this, R.string.message_saved, Toast.LENGTH_SHORT).show();
+    finish();
   }
 
   private void share() {
