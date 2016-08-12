@@ -24,10 +24,12 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
   private static String KEY_SHORT = "key_short";
   private static String KEY_DESCRIPTION = "key_description";
   private static String SHARE_FORMAT = "【簡単な説明文】\n%s\n【詳細な説明文】\n%s";
+
   @Bind(R.id.short_text) TextView shortText;
   @Bind(R.id.description) TextView description;
   @Bind(R.id.toolbar) Toolbar toolbar;
   @Bind(R.id.fab) FloatingActionButton fab;
+
   private String textShort;
   private String textDescription;
 
