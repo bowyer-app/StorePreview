@@ -4,7 +4,7 @@ This app helps your apps <b>ASO(App Store Optimization) </b>operation.
 
 support you input store html tags, and preview input your tags.
 
-<a href="https://github.com/bowyer-app/StorePreview/blob/master/art/en/screenshot-en.png" target="_blank"><img src="https://github.com/bowyer-app/StorePreview/blob/master/art/en/screenshot-en.png" alt="StorePreview" width="20%;"></a>
+<a href="https://github.com/bowyer-app/StorePreview/blob/master/art/en/demo.gif" target="_blank"><img src="https://github.com/bowyer-app/StorePreview/blob/master/art/en/demo.gif" alt="StorePreview" width="20%;"></a>
 
 # Try out the application on the Play Store.
 
