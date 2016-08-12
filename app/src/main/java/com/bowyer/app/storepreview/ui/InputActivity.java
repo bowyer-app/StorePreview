@@ -1,4 +1,4 @@
-package com.bowyer.app.storepreview;
+package com.bowyer.app.storepreview.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.bowyer.app.fabtransitionlayout.FooterLayout;
+import com.bowyer.app.storepreview.R;
 import com.bowyer.app.storepreview.preference.DataPreference;
 import com.crashlytics.android.Crashlytics;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;

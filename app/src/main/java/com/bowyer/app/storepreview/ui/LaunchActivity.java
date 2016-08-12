@@ -1,4 +1,4 @@
-package com.bowyer.app.storepreview;
+package com.bowyer.app.storepreview.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
