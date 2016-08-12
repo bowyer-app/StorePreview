@@ -39,6 +39,7 @@
         android:lineSpacingMultiplier="1.5"
         android:maxLength="4000"
         android:textColor="@color/black"
+        android:textSize="14sp"
         />
   </LinearLayout>
 </ScrollView>
