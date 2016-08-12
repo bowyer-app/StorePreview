@@ -113,10 +113,22 @@ public class InputActivity extends AppCompatActivity implements ObservableScroll
 
   @Override public void onUpOrCancelMotionEvent(ScrollState scrollState) {
     if (scrollState == ScrollState.UP) {
-      footerLayout.contractFab();
+      if (!footerLayout.isFabExpanded()) {
+        fab.hide();
+      }
     } else if (scrollState == ScrollState.DOWN) {
-      footerLayout.contractFab();
+      if (!footerLayout.isFabExpanded()) {
+        fab.show();
+      }
     }
+  }
+
+  @Override public void onBackPressed() {
+    if (footerLayout.isFabExpanded()) {
+      footerLayout.contractFab();
+      return;
+    }
+    super.onBackPressed();
   }
 
   private void setTag(String tag) {
