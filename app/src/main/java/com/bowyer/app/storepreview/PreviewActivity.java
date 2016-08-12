@@ -24,7 +24,6 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
 
   private static String KEY_SHORT_DESCRIPTION = "key_short_description";
   private static String KEY_DESCRIPTION = "key_description";
-  private static String SHARE_FORMAT = "【簡単な説明文】\n%s\n【詳細な説明文】\n%s";
 
   @Bind(R.id.scrollView) ObservableScrollView scrollView;
   @Bind(R.id.short_description) TextView shortDescription;
@@ -97,7 +96,7 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
   }
 
   private void share() {
-    String message = String.format(SHARE_FORMAT, textShort, textDescription);
+    String message = getString(R.string.share_text, textShort, textDescription);
     ShareCompat.IntentBuilder builder = ShareCompat.IntentBuilder.from(this);
     builder.setChooserTitle(getString(R.string.title_data_share));
     builder.setText(message);

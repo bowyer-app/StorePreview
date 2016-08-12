@@ -7,4 +7,8 @@
   <string name="hint_description">詳細な説明</string>
   <string name="text_need">すべて入力して下さい</string>
   <string name="message_saved">保存しました</string>
+  <string name="share_text">【簡単な説明】\n
+%1$s \n
+【詳細な説明】\n
+%2$s</string>
 </resources>

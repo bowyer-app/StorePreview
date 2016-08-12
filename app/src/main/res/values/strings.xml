@@ -7,4 +7,8 @@
   <string name="hint_description">Description</string>
   <string name="text_need">Need all text field</string>
   <string name="message_saved">Saved</string>
+  <string name="share_text">【Short Description】\n
+%1$s \n
+【Description】\n
+%2$s</string>
 </resources>
