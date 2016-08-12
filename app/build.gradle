@@ -1,17 +1,18 @@
 buildscript {
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
+  repositories {
+    maven { url 'https://maven.fabric.io/public' }
+  }
 
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
+  dependencies {
+    classpath 'io.fabric.tools:gradle:1.+'
+  }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 
 repositories {
-    maven { url 'https://maven.fabric.io/public' }
+  maven { url 'https://maven.fabric.io/public' }
+  maven { url 'https://jitpack.io' }
 }
 
 
@@ -41,8 +42,13 @@ dependencies {
   compile 'com.android.support:design:23.4.0'
   //Injection
   compile 'com.jakewharton:butterknife:7.0.1'
+  compile('com.crashlytics.sdk.android:crashlytics:2.6.2@aar') {
+    transitive = true;
+  }
+  //UI
+  compile 'com.bowyer.app:fabtransitionlayout:0.4.0@aar'
   compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.2@aar') {
-        transitive = true;
-    }
+  compile 'com.github.ozodrukh:CircularReveal:2.0.1'
+  // Color
+  compile 'petrov.kristiyan.colorpicker:colorpicker-library:1.1.0'
 }

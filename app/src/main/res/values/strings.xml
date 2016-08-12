@@ -11,4 +11,24 @@
 %1$s \n
 【Description】\n
 %2$s</string>
+  <string name="font">&lt;font&gt;</string>
+  <string name="font_hex">&lt;font color="%1s"&gt;</string>
+  <string name="font_end">&lt;/font&gt;</string>
+  <string name="br">&lt;/br&gt;</string>
+  <string name="b">&lt;b&gt;</string>
+  <string name="b_end">&lt;/b&gt;</string>
+  <string name="i">&lt;i&gt;</string>
+  <string name="i_end">&lt;/i&gt;</string>
+  <string name="u">&lt;u&gt;</string>
+  <string name="u_end">&lt;/u&gt;</string>
+  <string name="a">&lt;a&gt;</string>
+  <string name="a_end">&lt;/a&gt;</string>
+  <string name="h1">&lt;h1&gt;</string>
+  <string name="h1_end">&lt;/h1&gt;</string>
+  <string name="h2">&lt;h2&gt;</string>
+  <string name="h2_end">&lt;/h2&gt;</string>
+  <string name="h3">&lt;h3&gt;</string>
+  <string name="h3_end">&lt;/h3&gt;</string>
+  <string name="h4">&lt;h4&gt;</string>
+  <string name="h4_end">&lt;/h4&gt;</string>
 </resources>
