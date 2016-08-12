@@ -22,6 +22,7 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import io.fabric.sdk.android.Fabric;
+import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class InputActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
 
@@ -126,8 +127,14 @@ public class InputActivity extends AppCompatActivity implements ObservableScroll
   }
 
   @OnClick(R.id.font) void addFontTag() {
-    // TODO call color picker
-    setTag(getString(R.string.font));
+    ColorPicker colorPicker = new ColorPicker(this);
+    colorPicker.show();
+    colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+      @Override public void onChooseColor(int position, int color) {
+        String hexColor = String.format("#%06X", (0xFFFFFF & color));
+        setTag(getString(R.string.font_hex, hexColor));
+      }
+    });
   }
 
   @OnClick(R.id.font_end) void addFontEndTag() {

@@ -49,4 +49,6 @@ dependencies {
   compile 'com.bowyer.app:fabtransitionlayout:0.4.0@aar'
   compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
   compile 'com.github.ozodrukh:CircularReveal:2.0.1'
+  // Color
+  compile 'petrov.kristiyan.colorpicker:colorpicker-library:1.1.0'
 }

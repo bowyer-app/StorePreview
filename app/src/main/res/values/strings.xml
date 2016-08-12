@@ -13,6 +13,7 @@
 %2$s</string>
   <string name="tag">&lt;&gt;</string>
   <string name="font">&lt;font&gt;</string>
+  <string name="font_hex">&lt;font color="%1s"&gt;</string>
   <string name="font_end">&lt;/font&gt;</string>
   <string name="br">&lt;/br&gt;</string>
   <string name="b">&lt;b&gt;</string>
