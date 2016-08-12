@@ -61,14 +61,14 @@
       android:src="@drawable/ic_code"
       app:borderWidth="0dp"
       app:fabSize="normal"
-      app:rippleColor="@color/colorPrimary"
+      app:rippleColor="@color/colorAccent"
       />
   <com.bowyer.app.fabtransitionlayout.FooterLayout
       android:id="@+id/fabtoolbar"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
-      app:ft_color="@color/colorPrimary"
+      app:ft_color="@color/colorAccent"
       app:ft_container_gravity="center"
       >
     <HorizontalScrollView
