@@ -19,7 +19,7 @@ import io.fabric.sdk.android.Fabric;
 public class InputActivity extends AppCompatActivity {
 
   private static final String KEY_DESCRIPTION = "key_description";
-  @Bind(R.id.short_text) EditText editShort;
+  @Bind(R.id.short_description) EditText editShortDescription;
   @Bind(R.id.description) EditText editDescription;
 
   private DataPreference mPrefs;
@@ -60,7 +60,7 @@ public class InputActivity extends AppCompatActivity {
     }
     String shortText = mPrefs.getShortText();
     if (!TextUtils.isEmpty(shortText)) {
-      editShort.setText(shortText);
+      editShortDescription.setText(shortText);
     }
     String descriptionText = mPrefs.getDescriptionText();
     if (!TextUtils.isEmpty(descriptionText)) {
@@ -76,7 +76,7 @@ public class InputActivity extends AppCompatActivity {
   }
 
   private void showPreview() {
-    String shortText = editShort.getText().toString();
+    String shortText = editShortDescription.getText().toString();
     String description = editDescription.getText().toString();
     if (TextUtils.isEmpty(shortText) || TextUtils.isEmpty(description)) {
       Toast.makeText(this, R.string.text_need, Toast.LENGTH_SHORT).show();

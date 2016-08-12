@@ -21,11 +21,11 @@ import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
 public class PreviewActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
 
-  private static String KEY_SHORT = "key_short";
+  private static String KEY_SHORT_DESCRIPTION = "key_short_description";
   private static String KEY_DESCRIPTION = "key_description";
   private static String SHARE_FORMAT = "【簡単な説明文】\n%s\n【詳細な説明文】\n%s";
 
-  @Bind(R.id.short_text) TextView shortText;
+  @Bind(R.id.short_description) TextView shortDescription;
   @Bind(R.id.description) TextView description;
   @Bind(R.id.toolbar) Toolbar toolbar;
   @Bind(R.id.fab) FloatingActionButton fab;
@@ -37,7 +37,7 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
 
   public static void startActivity(Context context, String textShort, String textDescription) {
     Intent intent = new Intent(context, PreviewActivity.class);
-    intent.putExtra(KEY_SHORT, textShort);
+    intent.putExtra(KEY_SHORT_DESCRIPTION, textShort);
     intent.putExtra(KEY_DESCRIPTION, textDescription);
     context.startActivity(intent);
   }
@@ -61,10 +61,10 @@ public class PreviewActivity extends AppCompatActivity implements ObservableScro
   private void initData() {
     Intent intent = getIntent();
 
-    textShort = intent.getStringExtra(KEY_SHORT);
+    textShort = intent.getStringExtra(KEY_SHORT_DESCRIPTION);
     textDescription = intent.getStringExtra(KEY_DESCRIPTION);
 
-    shortText.setText(textShort);
+    shortDescription.setText(textShort);
     String parceDescription = textDescription.replaceAll("\\n", "<br>");
     description.setText(Html.fromHtml(parceDescription));
   }
