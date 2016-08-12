@@ -1,4 +1,4 @@
-package com.bowyer.app.storepreview;
+package com.bowyer.app.storepreview.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import com.bowyer.app.storepreview.R;
 import com.bowyer.app.storepreview.preference.DataPreference;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;

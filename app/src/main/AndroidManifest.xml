@@ -9,7 +9,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppBaseTheme">
     <activity
-        android:name=".InputActivity"
+        android:name=".ui.InputActivity"
         android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
@@ -17,7 +17,7 @@
       </intent-filter>
     </activity>
     <activity
-        android:name=".LaunchActivity"
+        android:name=".ui.LaunchActivity"
         android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.SEND"/>
@@ -27,7 +27,7 @@
       </intent-filter>
     </activity>
     <activity
-        android:name=".PreviewActivity"
+        android:name=".ui.PreviewActivity"
         android:theme="@style/AppBaseTheme.NoActionBar"/>
 
     <meta-data
