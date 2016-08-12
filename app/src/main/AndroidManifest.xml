@@ -18,6 +18,10 @@
     <activity
         android:name=".PreviewActivity"
         android:theme="@style/AppBaseTheme.NoActionBar"/>
-  </application>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4e9261e07a2bd522977aa763fbf54a76f2a49f72" />
+    </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

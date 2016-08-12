@@ -11,6 +11,8 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.bowyer.app.storepreview.preference.DataPreference;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class InputActivity extends AppCompatActivity {
 
@@ -21,6 +23,7 @@ public class InputActivity extends AppCompatActivity {
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Fabric.with(this, new Crashlytics());
     setContentView(R.layout.activity_input);
     ButterKnife.bind(this);
     mPrefs = new DataPreference(this);
