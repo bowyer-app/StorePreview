@@ -1,5 +1,7 @@
 package com.bowyer.app.storepreview;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +18,17 @@ import io.fabric.sdk.android.Fabric;
 
 public class InputActivity extends AppCompatActivity {
 
+  private static final String KEY_DESCRIPTION = "key_description";
   @Bind(R.id.short_text) EditText editShort;
   @Bind(R.id.description) EditText editDescription;
 
   private DataPreference mPrefs;
+
+  public static void startActivity(Context context, String description) {
+    Intent intent = new Intent(context, InputActivity.class);
+    intent.putExtra(KEY_DESCRIPTION, description);
+    context.startActivity(intent);
+  }
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -45,6 +54,10 @@ public class InputActivity extends AppCompatActivity {
   }
 
   private void initData() {
+    if (getIntent().hasExtra(KEY_DESCRIPTION)) {
+      setDataFromIntent();
+      return;
+    }
     String shortText = mPrefs.getShortText();
     if (!TextUtils.isEmpty(shortText)) {
       editShort.setText(shortText);
@@ -53,6 +66,13 @@ public class InputActivity extends AppCompatActivity {
     if (!TextUtils.isEmpty(descriptionText)) {
       editDescription.setText(descriptionText);
     }
+  }
+
+  private void setDataFromIntent() {
+    Intent intent = getIntent();
+    Bundle extras = intent.getExtras();
+    String description = extras.getString(KEY_DESCRIPTION);
+    editDescription.setText(description);
   }
 
   private void showPreview() {

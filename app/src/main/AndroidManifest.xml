@@ -8,20 +8,32 @@
       android:label="@string/app_name"
       android:supportsRtl="true"
       android:theme="@style/AppBaseTheme">
-    <activity android:name=".InputActivity">
+    <activity
+        android:name=".InputActivity"
+        android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
-
         <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name=".LaunchActivity"
+        android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.SEND"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:mimeType="text/*"/>
+
       </intent-filter>
     </activity>
     <activity
         android:name=".PreviewActivity"
         android:theme="@style/AppBaseTheme.NoActionBar"/>
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="4e9261e07a2bd522977aa763fbf54a76f2a49f72" />
-    </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <meta-data
+        android:name="io.fabric.ApiKey"
+        android:value="4e9261e07a2bd522977aa763fbf54a76f2a49f72"/>
+  </application>
+
+  <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
