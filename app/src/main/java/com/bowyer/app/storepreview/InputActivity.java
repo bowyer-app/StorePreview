@@ -10,20 +10,24 @@ import android.widget.EditText;
 import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.bowyer.app.storepreview.preference.DataPreference;
 
 public class InputActivity extends AppCompatActivity {
 
   @Bind(R.id.short_text) EditText editShort;
   @Bind(R.id.description) EditText editDescription;
 
+  private DataPreference mPrefs;
+
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_input);
     ButterKnife.bind(this);
+    mPrefs = new DataPreference(this);
+    initData();
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate menu resource file.
     getMenuInflater().inflate(R.menu.menu_input, menu);
     return super.onCreateOptionsMenu(menu);
   }
@@ -35,6 +39,17 @@ public class InputActivity extends AppCompatActivity {
         return true;
     }
     return false;
+  }
+
+  private void initData() {
+    String shortText = mPrefs.getShortText();
+    if (!TextUtils.isEmpty(shortText)) {
+      editShort.setText(shortText);
+    }
+    String descriptionText = mPrefs.getDescriptionText();
+    if (!TextUtils.isEmpty(descriptionText)) {
+      editDescription.setText(descriptionText);
+    }
   }
 
   private void showPreview() {

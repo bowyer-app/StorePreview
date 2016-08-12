@@ -3,6 +3,8 @@ package com.bowyer.app.storepreview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -11,15 +13,24 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import com.bowyer.app.storepreview.preference.DataPreference;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
+import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
-public class PreviewActivity extends AppCompatActivity {
+public class PreviewActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
 
   private static String KEY_SHORT = "key_short";
   private static String KEY_DESCRIPTION = "key_description";
-
+  private static String SHARE_FORMAT = "簡単な説明文\\n%s\\n詳細な説明文\\n%s";
   @Bind(R.id.short_text) TextView shortText;
   @Bind(R.id.description) TextView description;
   @Bind(R.id.toolbar) Toolbar toolbar;
+  @Bind(R.id.fab) FloatingActionButton fab;
+  private String textShort;
+  private String textDescription;
+
+  private DataPreference mPrefs;
 
   public static void startActivity(Context context, String textShort, String textDescription) {
     Intent intent = new Intent(context, PreviewActivity.class);
@@ -32,6 +43,7 @@ public class PreviewActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_preview);
     ButterKnife.bind(this);
+    mPrefs = new DataPreference(this);
     initToolbar();
     initData();
   }
@@ -46,8 +58,8 @@ public class PreviewActivity extends AppCompatActivity {
   private void initData() {
     Intent intent = getIntent();
 
-    String textShort = intent.getStringExtra(KEY_SHORT);
-    String textDescription = intent.getStringExtra(KEY_DESCRIPTION);
+    textShort = intent.getStringExtra(KEY_SHORT);
+    textDescription = intent.getStringExtra(KEY_DESCRIPTION);
 
     shortText.setText(textShort);
     String parceDescription = textDescription.replaceAll("\\n", "<br>");
@@ -55,7 +67,7 @@ public class PreviewActivity extends AppCompatActivity {
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate menu resource file.
+    getMenuInflater().inflate(R.menu.menu_preview, menu);
     return super.onCreateOptionsMenu(menu);
   }
 
@@ -64,7 +76,40 @@ public class PreviewActivity extends AppCompatActivity {
       case android.R.id.home:
         finish();
         return true;
+      case R.id.action_share:
+        share();
+        return true;
     }
     return false;
+  }
+
+  @OnClick(R.id.fab) void save() {
+    mPrefs.saveShortText(textShort);
+    mPrefs.saveSescriptionText(textDescription);
+  }
+
+  private void share() {
+    String message = String.format(SHARE_FORMAT, textShort, textDescription);
+    ShareCompat.IntentBuilder builder = ShareCompat.IntentBuilder.from(this);
+    builder.setChooserTitle(getString(R.string.title_data_share));
+    builder.setText(message);
+    builder.setType("text/plain");
+    builder.startChooser();
+  }
+
+  @Override public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+
+  }
+
+  @Override public void onDownMotionEvent() {
+
+  }
+
+  @Override public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+    if (scrollState == ScrollState.UP) {
+      fab.hide();
+    } else {
+      fab.show();
+    }
   }
 }

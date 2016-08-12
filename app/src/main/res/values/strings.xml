@@ -1,6 +1,8 @@
 <resources>
   <string name="app_name">ストアのプレビューです</string>
   <string name="action_preview">プレビュー</string>
+  <string name="action_share">シェア</string>
+  <string name="title_data_share">プレビューデータのシェア</string>
   <string name="hint_short">簡単な説明</string>
   <string name="hint_description">詳細な説明</string>
   <string name="text_need">すべて入力して下さい</string>
