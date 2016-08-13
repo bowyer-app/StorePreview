@@ -2,9 +2,25 @@
 
 This app helps your apps <b>ASO(App Store Optimization) </b>operation.
 
+Google play store description can use html tags.
+
+but the tag is different as usually html tags.
+
 support you input store html tags, and preview input your tags.
 
 <a href="https://github.com/bowyer-app/StorePreview/blob/master/art/en/demo.gif" target="_blank"><img src="https://github.com/bowyer-app/StorePreview/blob/master/art/en/demo.gif" alt="StorePreview"></a>
+
+# Supported tags
+- `<font color="#F84C44">font</font>` : change font color
+- `</br>` :  new line
+- `<b>b</>` : __bold__
+- `<i>i</i>` : _italic_
+- `<u>u</u>` : underline
+- `<a>a</a>` : [anchor](anchor)
+- `<h1>h1</h1>` : h1
+- `<h2>h2</h2>` : h2
+- `<h3>h3</h1>` : h3
+- `<h4>h4</h4>` : h4
 
 # Try out the application on the Play Store.
 
