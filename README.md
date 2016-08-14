@@ -13,7 +13,7 @@ support you input store html tags, and preview input your tags.
 # Supported tags
 - `<font color="#F84C44">font</font>` : change font color
 - `</br>` :  new line
-- `<b>b</>` : __bold__
+- `<b>b</b>` : __bold__
 - `<i>i</i>` : _italic_
 - `<u>u</u>` : underline
 - `<a>a</a>` : [anchor](anchor)
